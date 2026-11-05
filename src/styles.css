@@ -5,10 +5,15 @@
 @custom-variant dark (&:is(.dark *));
 
 body {
-  @apply m-0;
+  @apply m-0 bg-white text-foreground;
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(38, 120, 243, 0.2);
+  color: var(--foreground);
 }
 
 code {
@@ -186,7 +191,6 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
-  color: var(--foreground);
   letter-spacing: -0.02em;
 }
 

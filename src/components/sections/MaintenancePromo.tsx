@@ -8,57 +8,64 @@ import { cdn } from '@/lib/img'
 
 export function MaintenancePromo() {
   return (
-    <section className="py-20 sm:py-24">
-      <Container className="grid items-center gap-12 lg:grid-cols-2">
-        <div>
-          <SectionHeading
-            align="left"
-            eyebrow="Maintenance Plans"
-            title="Keep Your HVAC System Performing at Its Best."
-            description="Regular HVAC maintenance can help identify potential issues and keep your heating and cooling system operating efficiently."
-          />
-          <ul className="mt-8 space-y-3">
-            {['Scheduled seasonal servicing for heating and cooling', 'Reminders so servicing is not forgotten', 'Options for homes and commercial properties'].map((b) => (
-              <li key={b} className="flex items-center gap-3 font-medium text-navy">
-                <CheckCircle2 className="size-5 text-success" aria-hidden="true" /> {b}
-              </li>
-            ))}
-          </ul>
-          <Button asChild size="xl" className="mt-8">
-            <Link to="/maintenance-plans">
-              Explore Maintenance Plans <ArrowRight />
-            </Link>
-          </Button>
-        </div>
-
-        <div className="relative">
-          <img
-            src={cdn('/img/interior-comfort.jpg', 800, 600)}
-            width={800}
-            height={600}
-            loading="lazy"
-            decoding="async"
-            alt="Comfortable modern living room with a wall-mounted smart thermostat"
-            className="aspect-[4/3] w-full rounded-3xl object-cover"
-          />
-          <div className="relative -mt-24 ml-auto w-[92%] rounded-2xl border bg-white p-6 shadow-2xl shadow-navy/15 sm:-mt-32 sm:w-80 sm:mr-6">
-            <div className="flex items-center justify-between gap-3">
-              <span className="grid size-11 place-items-center rounded-xl bg-primary text-white">
-                <CalendarCheck className="size-5" aria-hidden="true" />
-              </span>
-              <SampleBadge>Illustrative plan</SampleBadge>
-            </div>
-            <h3 className="mt-4 text-xl font-bold">{maintenancePromo.planName}</h3>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-              {maintenancePromo.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" /> {b}
+    <section className="py-12 sm:py-16">
+      <Container>
+        <div className="grid overflow-hidden rounded-2xl bg-navy md:grid-cols-2">
+          <div className="relative min-h-64 md:min-h-0">
+            <img
+              src={cdn('/img/interior-comfort.jpg', 900, 650)}
+              width={900}
+              height={650}
+              loading="lazy"
+              decoding="async"
+              alt="Comfortable living space with a wall-mounted thermostat"
+              className="absolute inset-0 size-full object-cover"
+            />
+          </div>
+          <div className="bg-gradient-to-br from-navy-2 to-[#243d72] px-6 py-8 text-white sm:px-9 sm:py-10">
+            <SectionHeading
+              align="left"
+              eyebrow="Maintenance Plans"
+              title="A little planned care can make a difference."
+              description="If you rely on heating or cooling through the year, regular maintenance gives you a chance to check how the system is going and plan ahead."
+              tone="light"
+            />
+            <ul className="mt-6 space-y-2.5">
+              {[
+                'Scheduled seasonal servicing for heating and cooling',
+                'Reminders so servicing is not forgotten',
+              ].map((b) => (
+                <li
+                  key={b}
+                  className="flex items-center gap-3 text-sm font-medium text-white/90"
+                >
+                  <CheckCircle2
+                    className="size-5 shrink-0 text-emerald-300"
+                    aria-hidden="true"
+                  />{' '}
+                  {b}
                 </li>
               ))}
             </ul>
-            <Link to="/maintenance-plans" hash="plans" className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:underline">
-              Compare plans <ArrowRight className="size-4" aria-hidden="true" />
-            </Link>
+            <Button asChild size="lg" variant="light" className="mt-6">
+              <Link to="/maintenance-plans">
+                Explore Maintenance Plans <ArrowRight />
+              </Link>
+            </Button>
+            <div className="mt-5 flex items-center gap-3 border-t border-white/15 pt-4">
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-white/10 text-white">
+                <CalendarCheck className="size-5" aria-hidden="true" />
+              </span>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-sm font-bold text-white">
+                  {maintenancePromo.planName}
+                </h3>
+                <p className="text-xs text-white/75">
+                  Sample plan concept — see current options and terms.
+                </p>
+              </div>
+              <SampleBadge>Illustrative</SampleBadge>
+            </div>
           </div>
         </div>
       </Container>

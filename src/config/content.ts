@@ -1,8 +1,6 @@
 import type { LucideIcon } from 'lucide-react'
 import {
   Building,
-  ClipboardList,
-  Headset,
   Home,
   MessageSquareText,
   Settings2,
@@ -17,25 +15,76 @@ import type { MarketCode } from './market'
  * for the ClimatePro portfolio brand — replace with the client's own.
  */
 
-export const trustIndicators: { icon: LucideIcon; title: string; text: string }[] = [
-  { icon: Building, title: 'Residential & Commercial Solutions', text: 'Homes, offices, and retail properties' },
-  { icon: ClipboardList, title: 'Professional Service Requests', text: 'Simple online quote and booking requests' },
-  { icon: Wrench, title: 'Installation & Maintenance', text: 'From new systems to seasonal servicing' },
-  { icon: Headset, title: 'Customer-Focused Support', text: 'Clear communication at every step' },
+export const trustIndicators: {
+  icon: LucideIcon
+  title: string
+  text: string
+  cta: string
+  to: '/services' | '/get-a-quote' | '/book-service'
+}[] = [
+  {
+    icon: Building,
+    title: 'For homes and businesses',
+    text: 'Solutions for residential and commercial spaces',
+    cta: 'Explore services',
+    to: '/services',
+  },
+  {
+    icon: MessageSquareText,
+    title: 'Clear options, first',
+    text: 'Understand the proposed work before it begins',
+    cta: 'Request an estimate',
+    to: '/get-a-quote',
+  },
+  {
+    icon: Wrench,
+    title: 'Help through every stage',
+    text: 'Installation, repair, heating, cooling and maintenance',
+    cta: 'Book a service',
+    to: '/book-service',
+  },
 ]
 
 export const whyChoose: { icon: LucideIcon; title: string; text: string }[] = [
-  { icon: Users, title: 'Professional Service', text: 'A customer-focused service request and support experience, from first enquiry to follow-up.' },
-  { icon: MessageSquareText, title: 'Clear Communication', text: 'Transparent explanations of services, options, and next steps — before any work begins.' },
-  { icon: Home, title: 'Residential and Commercial', text: 'HVAC solutions matched to different property types, sizes, and requirements.' },
-  { icon: ShieldCheck, title: 'Maintenance-Focused', text: 'We encourage regular servicing and preventive maintenance to help systems run reliably.' },
+  {
+    icon: Users,
+    title: 'Professional Service',
+    text: 'A customer-focused service request and support experience, from first enquiry to follow-up.',
+  },
+  {
+    icon: MessageSquareText,
+    title: 'Clear Communication',
+    text: 'Transparent explanations of services, options, and next steps — before any work begins.',
+  },
+  {
+    icon: Home,
+    title: 'Residential and Commercial',
+    text: 'HVAC solutions matched to different property types, sizes, and requirements.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Maintenance-Focused',
+    text: 'We encourage regular servicing and preventive maintenance to help systems run reliably.',
+  },
 ]
 
 export const processSteps = [
-  { title: 'Tell Us What You Need', text: 'Select a service and describe your HVAC issue or project.' },
-  { title: 'Submit Your Request', text: 'Provide your contact details and property location.' },
-  { title: 'Our Team Reviews Your Request', text: 'The business receives your request and follows up with you.' },
-  { title: 'Schedule Your Service', text: 'Confirm the appointment time directly with our team.' },
+  {
+    title: 'Tell us what changed',
+    text: 'Share the issue you are noticing or the project you are planning.',
+  },
+  {
+    title: 'Get the options',
+    text: 'Discuss the property, your needs and the possible next steps.',
+  },
+  {
+    title: 'Review the estimate',
+    text: 'Understand the proposed work and costs before deciding.',
+  },
+  {
+    title: 'Choose what works',
+    text: 'If you are ready to proceed, arrange a service time with the team.',
+  },
 ]
 
 /** Illustrative portfolio examples — NOT actual completed ClimatePro projects. */
@@ -43,40 +92,42 @@ export const projects = [
   {
     id: 'residential-install',
     category: 'Residential Air Conditioning Installation',
-    title: 'Dual-condenser cooling for a two-storey home',
-    text: 'Example scope: replacing a single ageing condenser with two zoned systems so upstairs bedrooms and downstairs living areas can be controlled independently.',
+    title: 'A more comfortable two-storey home',
+    text: 'Illustrative example: planning separate comfort zones for upstairs and downstairs living.',
     image: '/img/project-residential.jpg',
-    imageAlt: 'Two new outdoor air conditioning condensers on a concrete pad beside a modern home',
+    imageAlt:
+      'Two new outdoor air conditioning condensers on a concrete pad beside a modern home',
   },
   {
     id: 'commercial-upgrade',
     category: 'Commercial HVAC Upgrade',
-    title: 'Plant room upgrade for a mid-size office',
-    text: 'Example scope: assessing air handling equipment and ductwork, then planning a phased upgrade to reduce disruption to tenants.',
+    title: 'Planning an office HVAC upgrade',
+    text: 'Illustrative example: reviewing equipment and planning an upgrade around a working building.',
     image: '/img/project-commercial.jpg',
-    imageAlt: 'Technician reviewing a tablet in a commercial mechanical room with air handling units',
+    imageAlt:
+      'Technician reviewing a tablet in a commercial mechanical room with air handling units',
   },
   {
     id: 'maintenance',
     category: 'HVAC Maintenance Project',
-    title: 'Pre-summer coil cleaning and system check',
-    text: 'Example scope: cleaning condenser coils, checking electrical components, and reviewing system performance ahead of peak cooling season.',
+    title: 'Preparing a system for the season',
+    text: 'Illustrative example: inspecting and cleaning equipment as part of routine maintenance.',
     image: '/img/project-maintenance.jpg',
-    imageAlt: 'Technician cleaning the coil fins of an outdoor air conditioning unit with a brush',
+    imageAlt:
+      'Technician cleaning the coil fins of an outdoor air conditioning unit with a brush',
   },
 ]
 
 /**
- * SAMPLE testimonials — placeholders only. Replace with genuine customer
- * reviews (with permission) before launch. Do not add ratings or counts that
- * are not verifiable.
+ * Add genuine customer feedback here only with permission. Keep this empty
+ * until verified reviews are available.
  */
-export const testimonials = [
-  { id: 't1', quote: 'The quote request was simple to fill in, and the follow-up call explained our options clearly. We understood exactly what the installation would involve.', name: 'Sample Customer A', context: 'Residential installation enquiry' },
-  { id: 't2', quote: 'Our office had uneven temperatures for months. The team walked through the building with us and put together a sensible maintenance plan.', name: 'Sample Customer B', context: 'Commercial maintenance enquiry' },
-  { id: 't3', quote: 'I appreciated being told what was wrong before any work was done. No pressure, just a clear explanation and a fair recommendation.', name: 'Sample Customer C', context: 'HVAC repair request' },
-  { id: 't4', quote: 'Booking a seasonal service online was easy, and they called to confirm a time that worked for us.', name: 'Sample Customer D', context: 'Seasonal servicing request' },
-]
+export const testimonials: {
+  id: string
+  quote: string
+  name: string
+  context: string
+}[] = []
 
 export interface MaintenancePlan {
   id: 'basic' | 'premium' | 'complete'
@@ -93,16 +144,27 @@ export const maintenancePlans: MaintenancePlan[] = [
   {
     id: 'basic',
     name: 'Basic Care',
-    summary: 'A straightforward starting point for keeping a single system checked.',
-    features: ['Routine inspection request', 'Filter maintenance information', 'System performance review'],
+    summary:
+      'A straightforward starting point for keeping a single system checked.',
+    features: [
+      'Routine inspection request',
+      'Filter maintenance information',
+      'System performance review',
+    ],
     illustrativePrice: { US: 15, AU: 22 },
     bestFor: 'Single-system homes',
   },
   {
     id: 'premium',
     name: 'Premium Care',
-    summary: 'Seasonal attention for households that rely on heating and cooling year-round.',
-    features: ['Everything in Basic Care', 'Expanded maintenance request', 'Seasonal service reminders', 'Priority enquiry handling'],
+    summary:
+      'Seasonal attention for households that rely on heating and cooling year-round.',
+    features: [
+      'Everything in Basic Care',
+      'Expanded maintenance request',
+      'Seasonal service reminders',
+      'Priority enquiry handling',
+    ],
     illustrativePrice: { US: 25, AU: 36 },
     highlighted: true,
     bestFor: 'Year-round comfort',
@@ -110,8 +172,13 @@ export const maintenancePlans: MaintenancePlan[] = [
   {
     id: 'complete',
     name: 'Complete Care',
-    summary: 'Coordinated maintenance for larger homes, multiple systems, or commercial sites.',
-    features: ['Residential or commercial maintenance enquiries', 'Scheduled maintenance planning', 'Dedicated service coordination'],
+    summary:
+      'Coordinated maintenance for larger homes, multiple systems, or commercial sites.',
+    features: [
+      'Residential or commercial maintenance enquiries',
+      'Scheduled maintenance planning',
+      'Dedicated service coordination',
+    ],
     illustrativePrice: { US: null, AU: null },
     bestFor: 'Multi-system & commercial',
   },
@@ -123,11 +190,32 @@ export const planDisclaimer =
 /** Homepage maintenance promotion bullets. */
 export const maintenancePromo = {
   planName: 'Premium Care',
-  bullets: ['Seasonal service reminders', 'Expanded system inspection request', 'Priority enquiry handling', 'Filter and performance guidance'],
+  bullets: [
+    'Seasonal service reminders',
+    'Expanded system inspection request',
+    'Priority enquiry handling',
+    'Filter and performance guidance',
+  ],
 }
 
-export const companyValues: { icon: LucideIcon; title: string; text: string }[] = [
-  { icon: MessageSquareText, title: 'Explain before we act', text: 'Customers should understand the problem and the options before approving any work.' },
-  { icon: Settings2, title: 'Right-sized solutions', text: 'Recommendations are based on the property and how it is used, not the most expensive option.' },
-  { icon: ShieldCheck, title: 'Care for the long term', text: 'Regular maintenance and honest advice help systems — and relationships — last.' },
+export const companyValues: {
+  icon: LucideIcon
+  title: string
+  text: string
+}[] = [
+  {
+    icon: MessageSquareText,
+    title: 'Explain before we act',
+    text: 'Customers should understand the problem and the options before approving any work.',
+  },
+  {
+    icon: Settings2,
+    title: 'Right-sized solutions',
+    text: 'Recommendations are based on the property and how it is used, not the most expensive option.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Care for the long term',
+    text: 'Regular maintenance and honest advice help systems — and relationships — last.',
+  },
 ]

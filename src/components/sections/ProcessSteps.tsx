@@ -4,8 +4,8 @@ import { cn } from '@/lib/utils'
 
 export function ProcessSteps({
   steps = processSteps,
-  title = 'How Our Process Works',
-  description = 'Requesting HVAC service should be simple. Here is what happens after you get in touch.',
+  title = 'Know what happens next.',
+  description = 'A clear process helps you make a confident decision, whether you need a repair or are planning an upgrade.',
   tone = 'dark',
 }: {
   steps?: { title: string; text: string }[]
