@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Form registration</title><meta name="robots" content="noindex" /></head>
+  <body>
+    <!-- Static skeletons so Netlify registers the React-rendered forms at deploy time.
+         Field names must match src/components/forms/* exactly. -->
+    <form name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="quote-request" />
+      <input name="fullName" />
+      <input name="reference" />
+      <input name="service" />
+      <input name="propertyType" />
+      <input name="propertySize" />
+      <input name="units" />
+      <input name="country" />
+      <input name="postal" />
+      <input name="locality" />
+      <textarea name="details"></textarea>
+      <input name="urgent" />
+      <input name="preferredDate" />
+      <input name="contactMethod" />
+      <input name="email" type="email" />
+      <input name="phone" />
+      <textarea name="notes"></textarea>
+      <input name="consent" />
+      <input name="bot-field" />
+    </form>
+    <form name="service-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="service-booking" />
+      <input name="fullName" />
+      <input name="reference" />
+      <input name="service" />
+      <input name="email" type="email" />
+      <input name="phone" />
+      <input name="country" />
+      <input name="address" />
+      <input name="preferredDate" />
+      <input name="timeWindow" />
+      <textarea name="details"></textarea>
+      <input name="urgent" />
+      <input name="consent" />
+      <input name="bot-field" />
+    </form>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="fullName" />
+      <input name="reference" />
+      <input name="email" type="email" />
+      <input name="phone" />
+      <input name="topic" />
+      <input name="market" />
+      <textarea name="message"></textarea>
+      <input name="consent" />
+      <input name="bot-field" />
+    </form>
+  </body>
+</html>

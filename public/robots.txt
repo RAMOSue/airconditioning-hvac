@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /__forms.html
+
+Sitemap: https://climatepro-hvac-website.netlify.app/sitemap.xml
